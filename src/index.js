@@ -2,12 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {BrowserRouter} from 'react-router-dom';
+import {ProductProvider} from './Context/Context';
+
+
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <ProductProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ProductProvider>
+
+  </BrowserRouter>
+ ,
   document.getElementById('root')
 );
 
